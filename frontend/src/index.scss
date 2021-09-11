@@ -15,6 +15,32 @@ body {
 
   ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5em;
+    font-size: xx-large;
+    color: white;
+
+    a {
+      &:not(:visited) {
+        color: rgb(0, 0, 255);
+        &:hover {
+          color: white;
+        }
+        &:focus {
+          color: gray;
+        }
+      }
+      &:visited {
+        color: rgb(200, 200, 200);
+        &:hover {
+          color: rgb(0, 0, 255);
+        }
+        &:focus {
+          color: rgb(0, 0, 255);
+        }
+      }
+    }
   }
 }
 

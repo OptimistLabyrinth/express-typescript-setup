@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import sassMiddleware from 'node-sass-middleware'
 
+import v1ApiRouter from './routes/v1/api'
 import indexRouter from './routes/index'
 import usersRouter from './routes/users'
 
@@ -29,6 +30,7 @@ app
   .use(express.static(path.resolve('..', 'frontend', 'build')))
 
 app
+  .use('/v1', v1ApiRouter)
   .use('*', (req, res, next) => {
     res.sendFile(path.resolve('..', 'frontend', 'build', 'index.html'))
   })
